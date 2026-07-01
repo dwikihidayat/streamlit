@@ -9,8 +9,8 @@ import time
 st.set_page_config(
     page_title="Prediksi Ukuran Pakaian",
     page_icon="👑",
-    layout="wide",  # Diubah dari "centered" menjadi "wide" untuk desktop
-    initial_sidebar_state="expanded"  # Diubah agar sidebar terbuka
+    layout="wide",
+    initial_sidebar_state="expanded"
 )
 
 # ========== PROFESSIONAL / CLEAN CSS ==========
@@ -40,7 +40,7 @@ st.markdown("""
     .block-container {
         padding-top: 2rem !important;
         padding-bottom: 2.5rem !important;
-        max-width: 1400px !important;  /* Diperlebar untuk desktop */
+        max-width: 1400px !important;
         padding-left: 2rem !important;
         padding-right: 2rem !important;
     }
@@ -176,7 +176,7 @@ st.markdown("""
         border-radius: 3px !important;
     }
 
-    /* === RADIO (height unit) === */
+    /* === RADIO (height unit) - TEKS PUTIH === */
     .stRadio > div {
         gap: 0 !important;
         background: #F0F4F8;
@@ -195,14 +195,14 @@ st.markdown("""
         font-size: 0.75rem !important;
         font-weight: 500 !important;
         letter-spacing: 0.3px !important;
-        color: #5A6C7D !important;
+        color: #FFFFFF !important;  /* TEKS PUTIH */
         transition: all 0.2s ease !important;
         cursor: pointer !important;
     }
 
     .stRadio > div label:hover {
-        color: #1A2332 !important;
-        background: rgba(61, 140, 154, 0.05) !important;
+        color: #FFFFFF !important;  /* TETAP PUTIH SAAT HOVER */
+        background: rgba(61, 140, 154, 0.15) !important;
     }
 
     .stRadio > div label[data-selected="true"] {
@@ -666,20 +666,20 @@ with col_result:
     if predict_clicked:
         cup_map = {'aa':0, 'a':1, 'b':2, 'c':3, 'd':4, 'dd/e':5, 'ddd/f':6, 'g':7, 'h':8, 'i':9, 'j':10, 'k':11}
         fit_map = {'Small': 0, 'Fit': 1, 'Large': 2}
-        
+
         cup_numeric = cup_map[cup_size.lower()]
         fit_numeric = fit_map[fit_pref]
-        
+
         cat_encoded = payload['le_category'].transform([category])[0]
         len_encoded = payload['le_length'].transform([length])[0]
-        
+
         EPS = 1e-6
         bust_height_ratio = bust / (height_cm + EPS)
         bra_cup_ratio = bra_size / (cup_numeric + EPS)
         waist_hip_ratio = waist / (hips + EPS)
         bust_waist_ratio = bust / (waist + EPS)
         bust_hip_ratio = bust / (hips + EPS)
-        
+
         input_dict = {
             'height': height_cm,
             'bra size': bra_size,
@@ -697,9 +697,9 @@ with col_result:
             'bust_waist_ratio': bust_waist_ratio,
             'bust_hip_ratio': bust_hip_ratio
         }
-        
+
         input_df = pd.DataFrame([input_dict])[payload['fitur_model']]
-        
+
         with st.spinner("Sedang menganalisis ukuran tubuhmu..."):
             time.sleep(0.6)
             scaled_input = payload['scaler'].transform(input_df)
@@ -721,7 +721,7 @@ with col_result:
             <div class="result-desc">{desc}</div>
         </div>
         """, unsafe_allow_html=True)
-        
+
     else:
         st.markdown("""
         <div class="result-card">
