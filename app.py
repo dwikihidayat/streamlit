@@ -22,16 +22,6 @@ st.markdown("""
         font-family: 'Inter', -apple-system, sans-serif;
     }
 
-    /* === PALETTE ===
-       Deep Navy     #1A2332
-       Slate         #2C3E50
-       Teal          #3D8C9A
-       Soft Teal     #5BA3B0
-       Mist          #D4E6E9
-       Light Gray    #F0F4F8
-       White         #FFFFFF
-    */
-
     /* === BACKGROUND === */
     .stApp {
         background: #F0F4F8;
@@ -94,7 +84,7 @@ st.markdown("""
 
     /* === SUBHEAD === */
     .subhead {
-        color: #5A6C7D;
+        color: #1A2332;
         font-size: 0.85rem;
         text-align: center;
         margin: 0 0 1.8rem 0;
@@ -113,7 +103,7 @@ st.markdown("""
         text-transform: uppercase;
         letter-spacing: 1.5px;
         font-weight: 600;
-        color: #5A6C7D;
+        color: #1A2332;
         margin: 0.2rem 0 0.8rem 0;
         border-bottom: 1px solid rgba(61, 140, 154, 0.15);
         padding-bottom: 0.4rem;
@@ -130,7 +120,7 @@ st.markdown("""
         align-items: center;
         font-weight: 400;
         font-size: 0.85rem;
-        color: #2C3E50;
+        color: #1A2332;
         margin-bottom: 0.3rem;
         padding: 0 2px;
     }
@@ -176,7 +166,7 @@ st.markdown("""
         border-radius: 3px !important;
     }
 
-    /* === RADIO (height unit) - TEKS PUTIH === */
+    /* === RADIO (height unit) - TEKS HITAM === */
     .stRadio > div {
         gap: 0 !important;
         background: #F0F4F8;
@@ -195,13 +185,13 @@ st.markdown("""
         font-size: 0.75rem !important;
         font-weight: 500 !important;
         letter-spacing: 0.3px !important;
-        color: #FFFFFF !important;  /* TEKS PUTIH */
+        color: #1A2332 !important;  /* TEKS HITAM */
         transition: all 0.2s ease !important;
         cursor: pointer !important;
     }
 
     .stRadio > div label:hover {
-        color: #FFFFFF !important;  /* TETAP PUTIH SAAT HOVER */
+        color: #1A2332 !important;  /* TETAP HITAM SAAT HOVER */
         background: rgba(61, 140, 154, 0.15) !important;
     }
 
@@ -267,7 +257,7 @@ st.markdown("""
         font-size: 0.7rem;
         text-transform: uppercase;
         letter-spacing: 2px;
-        color: #5A6C7D;
+        color: #1A2332;
         font-weight: 600;
         margin-bottom: 0.4rem;
     }
@@ -286,7 +276,7 @@ st.markdown("""
     }
 
     .result-desc {
-        color: #5A6C7D;
+        color: #1A2332;
         max-width: 350px;
         margin: 0.6rem auto 0;
         line-height: 1.6;
@@ -323,7 +313,7 @@ st.markdown("""
         padding: 0.5rem 0.4rem;
         text-align: center;
         border: 1px solid #D4E6E9;
-        color: #2C3E50;
+        color: #1A2332;
     }
 
     .size-table .size-label {
@@ -348,7 +338,7 @@ st.markdown("""
         border: 1px solid rgba(44, 62, 80, 0.06);
         font-size: 0.7rem;
         letter-spacing: 0.3px;
-        color: #5A6C7D;
+        color: #1A2332;
         margin-top: 1.2rem;
         box-shadow: 0 1px 6px rgba(44, 62, 80, 0.04);
     }
@@ -383,7 +373,7 @@ st.markdown("""
         border-radius: 8px;
         padding: 1.2rem;
         font-size: 0.8rem;
-        color: #5A6C7D;
+        color: #1A2332;
         border: 1px solid #D4E6E9;
     }
 
@@ -393,11 +383,32 @@ st.markdown("""
     }
 
     .sidebar-info .label {
-        color: #5A6C7D;
+        color: #1A2332;
         font-size: 0.6rem;
         text-transform: uppercase;
         letter-spacing: 1px;
         font-weight: 600;
+    }
+
+    /* === EXPANDER (Detail Pakaian) === */
+    .streamlit-expanderHeader {
+        color: #1A2332 !important;
+        font-weight: 600 !important;
+    }
+
+    .streamlit-expanderContent {
+        color: #1A2332 !important;
+    }
+
+    /* === SELECTBOX, RADIO, SLIDER di dalam expander === */
+    .stSelectbox label,
+    .stRadio label,
+    .stSlider label {
+        color: #1A2332 !important;
+    }
+
+    .stSelectbox div[data-baseweb="select"] span {
+        color: #1A2332 !important;
     }
 
     /* === LAYOUT DESKTOP === */
@@ -478,8 +489,7 @@ medians = {
 with st.sidebar:
     st.markdown("""
     <div style="display:flex; align-items:center; gap:10px; margin-bottom:1.5rem;">
-        <span style="font-size:1.4rem;">👑</span>
-        <span style="font-weight:600; font-size:0.9rem; letter-spacing:0.5px; color:#1A2332;">Ukuran Cerdas</span>
+        <span style="font-weight:600; font-size:0.9rem; letter-spacing:0.5px; color:#1A2332;">👑 Ukuran Cerdas</span>
     </div>
     """, unsafe_allow_html=True)
 
@@ -487,24 +497,24 @@ with st.sidebar:
     <div class="sidebar-info">
         <div style="margin-bottom:0.8rem;">
             <div class="label">Metode</div>
-            <strong style="font-size:0.95rem;">Random Forest</strong>
+            <strong style="font-size:0.95rem; color:#1A2332;">Random Forest</strong>
         </div>
         <div style="margin-bottom:0.8rem;">
             <div class="label">Kategori Ukuran</div>
-            <strong style="font-size:0.95rem;">S · M · L · XL</strong>
+            <strong style="font-size:0.95rem; color:#1A2332;">S · M · L · XL</strong>
         </div>
         <div style="margin-bottom:0.8rem;">
             <div class="label">Data Pelatihan</div>
-            <strong style="font-size:0.95rem;">756 profil (bersih & SMOTE)</strong>
+            <strong style="font-size:0.95rem; color:#1A2332;">756 profil (bersih & SMOTE)</strong>
         </div>
         <div>
             <div class="label">Nilai Tengah (Median)</div>
-            <span style="font-size:0.85rem; color:#2C3E50;">
-                Tinggi: <strong>{medians['height']:.1f} cm</strong><br>
-                Pinggang: <strong>{medians['waist']:.1f} inci</strong><br>
-                Pinggul: <strong>{medians['hips']:.1f} inci</strong><br>
-                Dada: <strong>{medians['bust']:.1f} inci</strong><br>
-                Bra: <strong>{medians['bra size']:.1f} inci</strong>
+            <span style="font-size:0.85rem; color:#1A2332;">
+                Tinggi: <strong style="color:#1A2332;">{medians['height']:.1f} cm</strong><br>
+                Pinggang: <strong style="color:#1A2332;">{medians['waist']:.1f} inci</strong><br>
+                Pinggul: <strong style="color:#1A2332;">{medians['hips']:.1f} inci</strong><br>
+                Dada: <strong style="color:#1A2332;">{medians['bust']:.1f} inci</strong><br>
+                Bra: <strong style="color:#1A2332;">{medians['bra size']:.1f} inci</strong>
             </span>
         </div>
     </div>
@@ -736,7 +746,7 @@ with col_result:
 st.markdown("""
 <div style="margin-top: 1.5rem; background: #FFFFFF; border-radius: 12px; padding: 1.5rem; border: 1px solid rgba(61, 140, 154, 0.15);">
     <div style="text-align: center; margin-bottom: 1rem;">
-        <span style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; color: #5A6C7D; font-weight: 600;">Konversi Ukuran</span>
+        <span style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; color: #1A2332; font-weight: 600;">Konversi Ukuran</span>
         <h4 style="color: #1A2332; margin: 0.2rem 0 0 0; font-weight: 500;">Tabel Ukuran Pakaian Wanita (US)</h4>
     </div>
     <table class="size-table">
