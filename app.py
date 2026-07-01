@@ -825,7 +825,4 @@ st.markdown(f"""
 """, unsafe_allow_html=True)
 
 st.markdown("""
-<div class="footer">
-    Antigravity AI · Prediktor Ukuran Premium
-</div>
 """, unsafe_allow_html=True)
