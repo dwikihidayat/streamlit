@@ -1,0 +1,38 @@
+# Core
+numpy==2.4.6
+pandas==3.0.3
+scikit-learn==1.9.0
+scipy==1.18.0
+
+# Visualisasi
+matplotlib==3.11.0
+seaborn==0.13.2
+plotly==6.8.0
+
+# Handling Imbalance
+imbalanced-learn==0.14.2
+
+# Streamlit & Web
+streamlit==1.58.0
+click==8.4.2
+Jinja2==3.1.6
+MarkupSafe==3.0.3
+blinker==1.9.0
+itsdangerous==2.2.0
+
+# Jupyter/Notebook (opsional, untuk running notebook)
+ipykernel==7.3.0
+ipython==9.15.0
+jupyter_client==8.9.1
+jupyter_core==5.9.1
+nbformat==5.10.4
+
+# Lainnya
+python-dateutil==2.9.0.post0
+packaging==26.2
+typing_extensions==4.15.0
+certifi==2026.6.17
+idna==3.18
+charset-normalizer==3.4.7
+urllib3==2.7.0
+requests==2.34.2
